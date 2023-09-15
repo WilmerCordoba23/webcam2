@@ -1,0 +1,24 @@
+<h1 >aaa</h1>
+<div >
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 col-sm-12"> 
+              <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1" 
+              [height]="280" 
+              [width]="400"
+              ></webcam>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div *ngIf="previewImage" class="text-center">
+                <img [src]="previewImage" height="280" width="400">
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div  class="d-flex justify-content-between">
+    <div>
+      <button type="submit" class="btn btn-secondary m-1" (click)="proceed()" *ngIf="previewImage">guardar</button>
+      <button class="btn btn-outline-secondary m-1" (click)="captureImage()">foto</button>
+    </div>
+</div>
